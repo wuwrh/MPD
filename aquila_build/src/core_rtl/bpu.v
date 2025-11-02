@@ -88,14 +88,7 @@ module bpu #( parameter ENTRY_NUM = 64, parameter XLEN = 32 )
     // to Program_Counter
     output              branch_hit_o,
     output              branch_decision_o,
-    output [XLEN-1 : 0] branch_target_addr_o,
-    
-    // BPU Profiler interface (for performance analysis)
-    output [NBITS-1 : 0] bht_read_addr_o,   // BHT read address for profiler
-    output [NBITS-1 : 0] bht_write_addr_o,  // BHT write address for profiler
-    output               bht_write_enable_o, // BHT write enable for profiler
-    output               bpu_req_o,          // BPU query request (IF stage)
-    output               bpu_pred_valid_o    // BPU provides valid prediction
+    output [XLEN-1 : 0] branch_target_addr_o
 );
 
 localparam NBITS = $clog2(ENTRY_NUM);
@@ -201,14 +194,5 @@ end
 //
 assign branch_hit_o = (branch_inst_tag == pc_i);
 assign branch_decision_o = branch_likelihood[read_addr][1];
-
-// ===========================================================================
-//  BPU Profiler interface outputs
-//
-assign bht_read_addr_o = read_addr;
-assign bht_write_addr_o = write_addr;
-assign bht_write_enable_o = we;
-assign bpu_req_o = (is_cond_branch_i | is_jal_i) & ~stall_i;  // BPU query request
-assign bpu_pred_valid_o = branch_hit_o;  // Valid prediction when BHT hit
 
 endmodule

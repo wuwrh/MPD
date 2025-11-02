@@ -285,11 +285,9 @@ RISCV_CORE0(
     // Interrupt signals
     .ext_irq_i(ext_irq_i), // for external interrupts
     .tmr_irq_i(tmr_irq),
-    .sft_irq_i(sft_irq)
+    .sft_irq_i(sft_irq),
 
     // Profiler debug signals
-    // TEMPORARILY COMMENTED OUT - profiler.v related connections
-    /*
     .profiler_exe_pc_o(core_exe_pc),
     .profiler_exe_valid_o(core_exe_valid),
     .profiler_exe_re_o(core_exe_re),
@@ -297,9 +295,7 @@ RISCV_CORE0(
     .profiler_stall_instr_fetch_o(core_stall_instr_fetch),
     .profiler_stall_data_fetch_o(core_stall_data_fetch),
     .profiler_stall_from_exe_o(core_stall_from_exe),
-    .profiler_stall_data_hazard_o(core_stall_data_hazard),
-    */
-    
+    .profiler_stall_data_hazard_o(core_stall_data_hazard)
 );
 
 // ----------------------------------------------------------------------------
@@ -316,9 +312,6 @@ wire              core_stall_data_fetch;  // Data memory fetch stall
 wire              core_stall_from_exe;    // Muldiv operation stall
 wire              core_stall_data_hazard; // Data hazard stall
 
-
-// TEMPORARILY COMMENTED OUT - profiler.v related signals
-/*
 // Profiler output signals (visible to ILA for hardware debugging)
 wire [63:0] profiler_total_cycles;
 wire [63:0] profiler_func0_cycles, profiler_func1_cycles, profiler_func2_cycles;
@@ -342,11 +335,7 @@ wire [2:0]  profiler_pc_region;           // PC所在區域編碼 (3-bit)
 wire        profiler_pc_above_funcs;      // PC高於所有函式範圍
 wire        profiler_pc_below_funcs;      // PC低於所有函式範圍
 wire        profiler_coremark_likely_ended; // CoreMark可能已結束
-*/
 
-
-// TEMPORARILY COMMENTED OUT - profiler.v related module instantiation
-/*
 // ----------------------------------------------------------------------------
 //  Hardware Profiler Module Instantiation
 //  
@@ -436,8 +425,6 @@ profiler #(
     .pc_below_funcs_debug(profiler_pc_below_funcs),        // PC低於所有函式範圍
     .coremark_likely_ended_debug(profiler_coremark_likely_ended) // CoreMark可能已結束
 );
-*/
-
 
 // ----------------------------------------------------------------------------
 //  Instiantiation of the dual-port tightly-coupled scratchpad memory module.

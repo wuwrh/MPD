@@ -102,7 +102,7 @@
 `define DCACHE_SIZE 4  // Data cache size in KB
 
 // Branch Prediction
-// `define ENABLE_BRANCH_PREDICTION
+`define ENABLE_BRANCH_PREDICTION
 
 // Atomic Unit
 `define ENABLE_ATOMIC_UNIT

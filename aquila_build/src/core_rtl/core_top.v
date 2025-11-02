@@ -128,21 +128,17 @@ module core_top #(
     // Interrupt sources.
     input                 ext_irq_i,
     input                 tmr_irq_i,
-    input                 sft_irq_i              // 最後一個端口，移除逗號
+    input                 sft_irq_i,
 
     // Profiler debug signals (connected to hardware profiler in aquila_top)
-    // TEMPORARILY COMMENTED OUT - profiler.v related signals
-    /*
-    ,output [XLEN-1 : 0]   profiler_exe_pc_o,              // PC of instr currently in Execute stage
+    output [XLEN-1 : 0]   profiler_exe_pc_o,              // PC of instr currently in Execute stage
     output                profiler_exe_valid_o,           // Execute stage valid
     output                profiler_exe_re_o,              // Load instruction
     output                profiler_exe_we_o,              // Store instruction
     output                profiler_stall_instr_fetch_o,   // Instruction fetch stall
     output                profiler_stall_data_fetch_o,    // Data fetch stall
     output                profiler_stall_from_exe_o,      // Muldiv stall
-    output                profiler_stall_data_hazard_o,   // Data hazard stall
-    */
-    
+    output                profiler_stall_data_hazard_o    // Data hazard stall
 );
 
 // ------------------------------
@@ -333,64 +329,6 @@ wire [XLEN-1 : 0] csr2dec_csr_data;
 wire              bpu_branch_hit;
 wire              bpu_branch_decision;
 wire [XLEN-1 : 0] bpu_branch_target_addr;
-
-// BPU Profiler interface signals
-wire [$clog2(64)-1 : 0] bpu_read_addr;    // BHT read address (assuming 64 entries)
-wire [$clog2(64)-1 : 0] bpu_write_addr;   // BHT write address
-wire              bpu_write_enable;        // BHT write enable
-wire              bpu_req;                 // BPU query request from IF stage
-wire              bpu_pred_valid;          // BPU provides valid prediction
-
-// =============================================================================
-// BPU Profiler Output Signals - Branch Prediction Statistics
-// =============================================================================
-// Branch instruction type counters
-wire [63:0]       bpu_prof_total_branches;
-wire [63:0]       bpu_prof_jal_count;
-wire [63:0]       bpu_prof_jalr_count;
-wire [63:0]       bpu_prof_cond_branch_count;
-
-// Branch direction statistics  
-wire [63:0]       bpu_prof_branches_taken;
-wire [63:0]       bpu_prof_branches_not_taken;
-
-// BPU request/response statistics
-wire [63:0]       bpu_prof_bpu_requests;
-wire [63:0]       bpu_prof_bpu_valid_predictions;
-wire [63:0]       bpu_prof_bht_hits;
-wire [63:0]       bpu_prof_bht_misses;
-wire [63:0]       bpu_prof_bht_updates;
-
-// Prediction accuracy statistics
-wire [63:0]       bpu_prof_correct_predictions;
-wire [63:0]       bpu_prof_incorrect_predictions;
-
-// Detailed misprediction analysis
-wire [63:0]       bpu_prof_false_positive;
-wire [63:0]       bpu_prof_false_negative;
-wire [63:0]       bpu_prof_target_mispred;
-
-// Misprediction penalty cycles
-wire [63:0]       bpu_prof_mispred_penalty_cycles;
-wire [63:0]       bpu_prof_flush_cycles;
-
-// Pipeline performance impact
-wire [63:0]       bpu_prof_pipeline_stalls;
-wire [63:0]       bpu_prof_total_cycles;
-
-`ifdef BHT_ANALYSIS_ENABLE
-// BHT utilization analysis
-wire [63:0]       bpu_prof_bht_conflicts;
-wire [31:0]       bpu_prof_bht_utilization;
-`endif
-
-// Raw performance metrics (numerator/denominator)
-wire [63:0]       bpu_prof_prediction_accuracy_numerator;
-wire [63:0]       bpu_prof_prediction_accuracy_denominator;
-wire [63:0]       bpu_prof_bht_hit_rate_numerator;
-wire [63:0]       bpu_prof_bht_hit_rate_denominator;
-wire [63:0]       bpu_prof_avg_penalty_numerator;
-wire [63:0]       bpu_prof_avg_penalty_denominator;
 
 // Misc. signals
 wire              irq_enable;
@@ -722,7 +660,7 @@ forwarding_unit Forwarding_Unit(
 );
 
 // =============================================================================
-bpu #(.ENTRY_NUM(64), .XLEN(XLEN)) Branch_Prediction_Unit(
+bpu #(.XLEN(XLEN)) Branch_Prediction_Unit(
     // Top-level system signals
     .clk_i(clk_i),
     .rst_i(rst_i),
@@ -745,14 +683,7 @@ bpu #(.ENTRY_NUM(64), .XLEN(XLEN)) Branch_Prediction_Unit(
     // to Program_Counter and Fetch
     .branch_hit_o(bpu_branch_hit),
     .branch_decision_o(bpu_branch_decision),
-    .branch_target_addr_o(bpu_branch_target_addr),
-    
-    // BPU Profiler interface
-    .bht_read_addr_o(bpu_read_addr),
-    .bht_write_addr_o(bpu_write_addr),
-    .bht_write_enable_o(bpu_write_enable),
-    .bpu_req_o(bpu_req),
-    .bpu_pred_valid_o(bpu_pred_valid)
+    .branch_target_addr_o(bpu_branch_target_addr)
 );
 
 // =============================================================================
@@ -1455,100 +1386,11 @@ fp_reg_file FP_Register_File(
 `endif // ENABLE_FPU
 
 // =============================================================================
-// BPU Profiler - Branch Prediction Behavior Analysis
-// =============================================================================
-bpu_profiler #(.XLEN(XLEN), .BHT_ENTRY_NUM(64)) BPU_Profiler(
-    // System signals
-    .clk_i(clk_i),
-    .rst_i(rst_i),
-    
-    // Profiler control (connected to existing profiler control if available)
-    .profiler_enable_i(1'b1),              // Always enabled for analysis
-    .profiler_reset_i(rst_i),               // Reset with system reset
-    
-    // BPU Interface Signals
-    .fetch_pc_i(pcu_pc),                    // PC being fetched
-    .bpu_req_i(bpu_req),                    // BPU query request
-    .bpu_pred_valid_i(bpu_pred_valid),      // BPU provides valid prediction
-    .branch_hit_i(bpu_branch_hit),          // BHT hit for current PC
-    .branch_decision_i(bpu_branch_decision), // BPU prediction (taken/not taken)
-    .branch_target_addr_i(bpu_branch_target_addr), // Predicted target address
-    
-    // BPU internal interface
-    .bht_write_addr_i(bpu_write_addr),      // BHT write address  
-    .bht_write_enable_i(bpu_write_enable),  // BHT write enable
-    
-    // Execute Stage Branch Type Signals
-    .exe_is_jal_i(dec_is_jal),              // JAL instruction (using decode stage for now)
-    .exe_is_jalr_i(dec_is_jalr),            // JALR instruction (using decode stage for now)
-    .exe_is_cond_branch_i(dec_is_branch),   // Conditional branch (using decode stage for now)
-    
-    // Execute Stage Signals (Ground Truth)
-    .exe_pc_i(exe2mem_pc),                  // Execute stage PC
-    .exe_valid_i(exe2mem_fetch_valid),      // Execute stage is valid
-    .exe_is_branch_i(exe_is_branch2bpu),    // Execute: is branch instruction
-    .branch_taken_i(exe_branch_taken),      // Execute: actual branch taken
-    .branch_misprediction_i(exe_branch_misprediction), // Execute: misprediction detected
-    .exe_branch_target_i(exe_branch_target_addr), // Execute: actual target address
-    
-    // Pipeline Control Signals 
-    .flush_fetch_i(flush2fet),              // Pipeline flush to fetch
-    .flush_decode_i(flush2dec),             // Pipeline flush to decode
-    .pipeline_stall_i(stall_pipeline),      // Pipeline stall signal
-    
-    // Optional IF valid on redirect (not available in current core, use fallback)
-    .if_valid_on_redirect_i(1'b0),          // IF hits redirect target and is valid
-    
-    // BPU Profiler Statistics Outputs (for ILA and debugging)
-    .total_branches_o(bpu_prof_total_branches),
-    .jal_count_o(bpu_prof_jal_count),
-    .jalr_count_o(bpu_prof_jalr_count),
-    .cond_branch_count_o(bpu_prof_cond_branch_count),
-    
-    .branches_taken_o(bpu_prof_branches_taken),
-    .branches_not_taken_o(bpu_prof_branches_not_taken),
-    
-    .bpu_requests_o(bpu_prof_bpu_requests),
-    .bpu_valid_predictions_o(bpu_prof_bpu_valid_predictions),
-    .bht_hits_o(bpu_prof_bht_hits),
-    .bht_misses_o(bpu_prof_bht_misses),
-    .bht_updates_o(bpu_prof_bht_updates),
-    
-    .correct_predictions_o(bpu_prof_correct_predictions),
-    .incorrect_predictions_o(bpu_prof_incorrect_predictions),
-    
-    .false_positive_o(bpu_prof_false_positive),
-    .false_negative_o(bpu_prof_false_negative),
-    .target_mispred_o(bpu_prof_target_mispred),
-    
-    .mispred_penalty_cycles_o(bpu_prof_mispred_penalty_cycles),
-    .flush_cycles_o(bpu_prof_flush_cycles),
-    
-    .pipeline_stalls_o(bpu_prof_pipeline_stalls),
-    .total_cycles_o(bpu_prof_total_cycles),
-    
-`ifdef BHT_ANALYSIS_ENABLE
-    .bht_conflicts_o(bpu_prof_bht_conflicts),
-    .bht_utilization_o(bpu_prof_bht_utilization),
-`endif
-    
-    // Raw Performance Metrics (numerator/denominator for software calculation)
-    .prediction_accuracy_numerator_o(bpu_prof_prediction_accuracy_numerator),
-    .prediction_accuracy_denominator_o(bpu_prof_prediction_accuracy_denominator),
-    .bht_hit_rate_numerator_o(bpu_prof_bht_hit_rate_numerator),
-    .bht_hit_rate_denominator_o(bpu_prof_bht_hit_rate_denominator),
-    .avg_penalty_numerator_o(bpu_prof_avg_penalty_numerator),
-    .avg_penalty_denominator_o(bpu_prof_avg_penalty_denominator)
-);
-
-// =============================================================================
 // Profiler debug signal assignments
 // 
 // These signals are exported to the hardware profiler module in aquila_top.v
 // for real-time performance analysis on FPGA.
 // =============================================================================
-// TEMPORARILY COMMENTED OUT - profiler.v related assignments
-/*
 assign profiler_exe_pc_o = dec_pc;                      // PC of instruction currently in Execute stage
 assign profiler_exe_valid_o = exe2mem_fetch_valid;      // Valid instruction in Execute stage
 assign profiler_exe_re_o = exe_re;                      // Load instruction (read enable)
@@ -1557,7 +1399,5 @@ assign profiler_stall_instr_fetch_o = stall_instr_fetch; // Instruction cache mi
 assign profiler_stall_data_fetch_o = stall_data_fetch;   // Data cache miss stall
 assign profiler_stall_from_exe_o = stall_from_exe;       // Muldiv operation stall
 assign profiler_stall_data_hazard_o = stall_data_hazard; // Load-use hazard stall
-*/
-
 
 endmodule
