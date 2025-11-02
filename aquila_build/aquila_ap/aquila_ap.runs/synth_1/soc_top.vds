@@ -1,0 +1,761 @@
+#-----------------------------------------------------------
+# Vivado v2024.1 (64-bit)
+# SW Build 5076996 on Wed May 22 18:36:09 MDT 2024
+# IP Build 5075265 on Wed May 22 21:45:21 MDT 2024
+# SharedData Build 5076995 on Wed May 22 18:29:18 MDT 2024
+# Start of session at: Wed Oct 22 13:26:22 2025
+# Process ID: 9507
+# Current directory: /home/johnny/MPD/aquila_build/aquila_ap/aquila_ap.runs/synth_1
+# Command line: vivado -log soc_top.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source soc_top.tcl
+# Log file: /home/johnny/MPD/aquila_build/aquila_ap/aquila_ap.runs/synth_1/soc_top.vds
+# Journal file: /home/johnny/MPD/aquila_build/aquila_ap/aquila_ap.runs/synth_1/vivado.jou
+# Running On        :johnny-VMware-Virtual-Platform
+# Platform          :Ubuntu
+# Operating System  :Ubuntu 24.04.3 LTS
+# Processor Detail  :Intel(R) Core(TM) i5-1038NG7 CPU @ 2.00GHz
+# CPU Frequency     :1996.800 MHz
+# CPU Physical cores:4
+# CPU Logical cores :4
+# Host memory       :10378 MB
+# Swap memory       :8589 MB
+# Total Virtual     :18968 MB
+# Available Virtual :15311 MB
+#-----------------------------------------------------------
+source soc_top.tcl -notrace
+create_project: Time (s): cpu = 00:00:09 ; elapsed = 00:00:09 . Memory (MB): peak = 1377.262 ; gain = 23.809 ; free physical = 2662 ; free virtual = 14265
+Command: read_checkpoint -auto_incremental -incremental /home/johnny/MPD/aquila_build/aquila_ap/aquila_ap.srcs/utils_1/imports/synth_1/soc_top.dcp
+INFO: [Vivado 12-5825] Read reference checkpoint from /home/johnny/MPD/aquila_build/aquila_ap/aquila_ap.srcs/utils_1/imports/synth_1/soc_top.dcp for incremental synthesis
+INFO: [Vivado 12-7989] Please ensure there are no constraint changes
+Command: synth_design -top soc_top -part xc7a100tcsg324-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7a100t'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a100t'
+INFO: [Device 21-403] Loading part xc7a100tcsg324-1
+INFO: [Device 21-9227] Part: xc7a100tcsg324-1 does not have CEAM library.
+INFO: [Designutils 20-5440] No compile time benefit to using incremental synthesis; A full resynthesis will be run
+INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 4 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 9623
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:08 ; elapsed = 00:00:10 . Memory (MB): peak = 2153.797 ; gain = 413.684 ; free physical = 1538 ; free virtual = 13171
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-6901] identifier 'NBITS' is used before its declaration [/home/johnny/MPD/aquila_build/src/core_rtl/bpu.v:94]
+WARNING: [Synth 8-6901] identifier 'NBITS' is used before its declaration [/home/johnny/MPD/aquila_build/src/core_rtl/bpu.v:95]
+INFO: [Synth 8-11241] undeclared symbol 'flush2fet', assumed default net type 'wire' [/home/johnny/MPD/aquila_build/src/core_rtl/core_top.v:1495]
+INFO: [Synth 8-11241] undeclared symbol 'flush2dec', assumed default net type 'wire' [/home/johnny/MPD/aquila_build/src/core_rtl/core_top.v:1496]
+INFO: [Synth 8-11241] undeclared symbol 'ld_st_privilege_lvl_o', assumed default net type 'wire' [/home/johnny/MPD/aquila_build/src/core_rtl/csr_file.v:1127]
+INFO: [Synth 8-11241] undeclared symbol 'csr_flush_o', assumed default net type 'wire' [/home/johnny/MPD/aquila_build/src/core_rtl/csr_file.v:1129]
+INFO: [Synth 8-11241] undeclared symbol 'stall_fp64_load_use_i', assumed default net type 'wire' [/home/johnny/MPD/aquila_build/src/core_rtl/execute.v:261]
+INFO: [Synth 8-11241] undeclared symbol 'fpu_stall', assumed default net type 'wire' [/home/johnny/MPD/aquila_build/src/core_rtl/execute.v:1159]
+INFO: [Synth 8-6157] synthesizing module 'soc_top' [/home/johnny/MPD/aquila_build/src/soc_rtl/soc_top.v:66]
+INFO: [Synth 8-6157] synthesizing module 'clk_wiz_0' [/home/johnny/MPD/aquila_build/aquila_ap/aquila_ap.runs/synth_1/.Xil/Vivado-9507-johnny-VMware-Virtual-Platform/realtime/clk_wiz_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'clk_wiz_0' (0#1) [/home/johnny/MPD/aquila_build/aquila_ap/aquila_ap.runs/synth_1/.Xil/Vivado-9507-johnny-VMware-Virtual-Platform/realtime/clk_wiz_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'aquila_top' [/home/johnny/MPD/aquila_build/src/core_rtl/aquila_top.v:76]
+INFO: [Synth 8-6157] synthesizing module 'core_top' [/home/johnny/MPD/aquila_build/src/core_rtl/core_top.v:93]
+	Parameter HART_ID bound to: 0 - type: integer 
+	Parameter XLEN bound to: 32 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'pipeline_control' [/home/johnny/MPD/aquila_build/src/core_rtl/pipeline_control.v:69]
+INFO: [Synth 8-6155] done synthesizing module 'pipeline_control' (0#1) [/home/johnny/MPD/aquila_build/src/core_rtl/pipeline_control.v:69]
+INFO: [Synth 8-6157] synthesizing module 'forwarding_unit' [/home/johnny/MPD/aquila_build/src/core_rtl/forwarding_unit.v:60]
+INFO: [Synth 8-6155] done synthesizing module 'forwarding_unit' (0#1) [/home/johnny/MPD/aquila_build/src/core_rtl/forwarding_unit.v:60]
+INFO: [Synth 8-6157] synthesizing module 'bpu' [/home/johnny/MPD/aquila_build/src/core_rtl/bpu.v:67]
+	Parameter ENTRY_NUM bound to: 64 - type: integer 
+	Parameter XLEN bound to: 32 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'distri_ram' [/home/johnny/MPD/aquila_build/src/core_rtl/distri_ram.v:56]
+	Parameter ENTRY_NUM bound to: 64 - type: integer 
+	Parameter XLEN bound to: 64 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'distri_ram' (0#1) [/home/johnny/MPD/aquila_build/src/core_rtl/distri_ram.v:56]
+INFO: [Synth 8-6155] done synthesizing module 'bpu' (0#1) [/home/johnny/MPD/aquila_build/src/core_rtl/bpu.v:67]
+INFO: [Synth 8-6157] synthesizing module 'reg_file' [/home/johnny/MPD/aquila_build/src/core_rtl/reg_file.v:57]
+INFO: [Synth 8-6155] done synthesizing module 'reg_file' (0#1) [/home/johnny/MPD/aquila_build/src/core_rtl/reg_file.v:57]
+INFO: [Synth 8-6157] synthesizing module 'program_counter' [/home/johnny/MPD/aquila_build/src/core_rtl/program_counter.v:73]
+INFO: [Synth 8-6155] done synthesizing module 'program_counter' (0#1) [/home/johnny/MPD/aquila_build/src/core_rtl/program_counter.v:73]
+INFO: [Synth 8-6157] synthesizing module 'fetch' [/home/johnny/MPD/aquila_build/src/core_rtl/fetch.v:77]
+INFO: [Synth 8-6155] done synthesizing module 'fetch' (0#1) [/home/johnny/MPD/aquila_build/src/core_rtl/fetch.v:77]
+INFO: [Synth 8-6157] synthesizing module 'decode' [/home/johnny/MPD/aquila_build/src/core_rtl/decode.v:67]
+INFO: [Synth 8-6155] done synthesizing module 'decode' (0#1) [/home/johnny/MPD/aquila_build/src/core_rtl/decode.v:67]
+INFO: [Synth 8-6157] synthesizing module 'execute' [/home/johnny/MPD/aquila_build/src/core_rtl/execute.v:63]
+INFO: [Synth 8-6157] synthesizing module 'alu' [/home/johnny/MPD/aquila_build/src/core_rtl/alu.v:58]
+INFO: [Synth 8-6155] done synthesizing module 'alu' (0#1) [/home/johnny/MPD/aquila_build/src/core_rtl/alu.v:58]
+INFO: [Synth 8-6157] synthesizing module 'muldiv' [/home/johnny/MPD/aquila_build/src/core_rtl/muldiv.v:72]
+INFO: [Synth 8-6155] done synthesizing module 'muldiv' (0#1) [/home/johnny/MPD/aquila_build/src/core_rtl/muldiv.v:72]
+INFO: [Synth 8-6157] synthesizing module 'bcu' [/home/johnny/MPD/aquila_build/src/core_rtl/bcu.v:57]
+INFO: [Synth 8-6155] done synthesizing module 'bcu' (0#1) [/home/johnny/MPD/aquila_build/src/core_rtl/bcu.v:57]
+INFO: [Synth 8-6155] done synthesizing module 'execute' (0#1) [/home/johnny/MPD/aquila_build/src/core_rtl/execute.v:63]
+INFO: [Synth 8-6157] synthesizing module 'memory' [/home/johnny/MPD/aquila_build/src/core_rtl/memory.v:66]
+INFO: [Synth 8-226] default block is never used [/home/johnny/MPD/aquila_build/src/core_rtl/memory.v:186]
+INFO: [Synth 8-6155] done synthesizing module 'memory' (0#1) [/home/johnny/MPD/aquila_build/src/core_rtl/memory.v:66]
+INFO: [Synth 8-6157] synthesizing module 'writeback' [/home/johnny/MPD/aquila_build/src/core_rtl/writeback.v:62]
+INFO: [Synth 8-6155] done synthesizing module 'writeback' (0#1) [/home/johnny/MPD/aquila_build/src/core_rtl/writeback.v:62]
+INFO: [Synth 8-6157] synthesizing module 'csr_file' [/home/johnny/MPD/aquila_build/src/core_rtl/csr_file.v:63]
+	Parameter HART_ID bound to: 0 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'csr_file' (0#1) [/home/johnny/MPD/aquila_build/src/core_rtl/csr_file.v:63]
+INFO: [Synth 8-6157] synthesizing module 'bpu_profiler' [/home/johnny/MPD/aquila_build/src/core_rtl/bpu_profiler.v:28]
+	Parameter XLEN bound to: 32 - type: integer 
+	Parameter BHT_ENTRY_NUM bound to: 64 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'bpu_profiler' (0#1) [/home/johnny/MPD/aquila_build/src/core_rtl/bpu_profiler.v:28]
+WARNING: [Synth 8-7071] port 'cpi_numerator_o' of module 'bpu_profiler' is unconnected for instance 'BPU_Profiler' [/home/johnny/MPD/aquila_build/src/core_rtl/core_top.v:1460]
+WARNING: [Synth 8-7071] port 'cpi_denominator_o' of module 'bpu_profiler' is unconnected for instance 'BPU_Profiler' [/home/johnny/MPD/aquila_build/src/core_rtl/core_top.v:1460]
+WARNING: [Synth 8-7023] instance 'BPU_Profiler' of module 'bpu_profiler' has 53 connections declared, but only 51 given [/home/johnny/MPD/aquila_build/src/core_rtl/core_top.v:1460]
+INFO: [Synth 8-6155] done synthesizing module 'core_top' (0#1) [/home/johnny/MPD/aquila_build/src/core_rtl/core_top.v:93]
+INFO: [Synth 8-6157] synthesizing module 'sram_dp' [/home/johnny/MPD/aquila_build/src/core_rtl/sram_dp.v:56]
+	Parameter DATA_WIDTH bound to: 32 - type: integer 
+	Parameter N_ENTRIES bound to: 16384 - type: integer 
+INFO: [Synth 8-3876] $readmem data file 'uartboot.mem' is read successfully [/home/johnny/MPD/aquila_build/src/core_rtl/sram_dp.v:82]
+INFO: [Synth 8-6155] done synthesizing module 'sram_dp' (0#1) [/home/johnny/MPD/aquila_build/src/core_rtl/sram_dp.v:56]
+INFO: [Synth 8-6157] synthesizing module 'clint' [/home/johnny/MPD/aquila_build/src/core_rtl/clint.v:66]
+INFO: [Synth 8-6155] done synthesizing module 'clint' (0#1) [/home/johnny/MPD/aquila_build/src/core_rtl/clint.v:66]
+INFO: [Synth 8-6157] synthesizing module 'atomic_unit' [/home/johnny/MPD/aquila_build/src/core_rtl/atomic_unit.v:60]
+WARNING: [Synth 8-151] case item 2'b10 is unreachable [/home/johnny/MPD/aquila_build/src/core_rtl/atomic_unit.v:186]
+INFO: [Synth 8-6155] done synthesizing module 'atomic_unit' (0#1) [/home/johnny/MPD/aquila_build/src/core_rtl/atomic_unit.v:60]
+INFO: [Synth 8-6155] done synthesizing module 'aquila_top' (0#1) [/home/johnny/MPD/aquila_build/src/core_rtl/aquila_top.v:76]
+WARNING: [Synth 8-7071] port 'ext_irq_i' of module 'aquila_top' is unconnected for instance 'Aquila_SoC' [/home/johnny/MPD/aquila_build/src/soc_rtl/soc_top.v:260]
+WARNING: [Synth 8-7023] instance 'Aquila_SoC' of module 'aquila_top' has 21 connections declared, but only 20 given [/home/johnny/MPD/aquila_build/src/soc_rtl/soc_top.v:260]
+INFO: [Synth 8-6157] synthesizing module 'uart' [/home/johnny/MPD/aquila_build/src/soc_rtl/uart.v:82]
+	Parameter BAUD bound to: 16'b0000000110110010 
+WARNING: [Synth 8-11581] system task call 'write' not supported [/home/johnny/MPD/aquila_build/src/soc_rtl/uart.v:155]
+WARNING: [Synth 8-11581] system task call 'stop' not supported [/home/johnny/MPD/aquila_build/src/soc_rtl/uart.v:161]
+INFO: [Synth 8-6155] done synthesizing module 'uart' (0#1) [/home/johnny/MPD/aquila_build/src/soc_rtl/uart.v:82]
+INFO: [Synth 8-6157] synthesizing module 'core2axi_if' [/home/johnny/MPD/aquila_build/src/soc_rtl/core2axi_if.v:59]
+	Parameter XLEN bound to: 32 - type: integer 
+	Parameter AXI_ADDR_LEN bound to: 7 - type: integer 
+WARNING: [Synth 8-693] zero replication count - replication ignored [/home/johnny/MPD/aquila_build/src/soc_rtl/core2axi_if.v:222]
+INFO: [Synth 8-6155] done synthesizing module 'core2axi_if' (0#1) [/home/johnny/MPD/aquila_build/src/soc_rtl/core2axi_if.v:59]
+INFO: [Synth 8-6157] synthesizing module 'axi_quad_spi_0' [/home/johnny/MPD/aquila_build/aquila_ap/aquila_ap.runs/synth_1/.Xil/Vivado-9507-johnny-VMware-Virtual-Platform/realtime/axi_quad_spi_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'axi_quad_spi_0' (0#1) [/home/johnny/MPD/aquila_build/aquila_ap/aquila_ap.runs/synth_1/.Xil/Vivado-9507-johnny-VMware-Virtual-Platform/realtime/axi_quad_spi_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'soc_top' (0#1) [/home/johnny/MPD/aquila_build/src/soc_rtl/soc_top.v:66]
+WARNING: [Synth 8-6014] Unused sequential element pc_r_reg was removed.  [/home/johnny/MPD/aquila_build/src/core_rtl/execute.v:367]
+WARNING: [Synth 8-6014] Unused sequential element fp64_ls_r_reg was removed.  [/home/johnny/MPD/aquila_build/src/core_rtl/execute.v:368]
+WARNING: [Synth 8-3848] Net stall_fp64_load_use_i in module/entity execute does not have driver. [/home/johnny/MPD/aquila_build/src/core_rtl/execute.v:261]
+WARNING: [Synth 8-6014] Unused sequential element cycle_r_reg was removed.  [/home/johnny/MPD/aquila_build/src/core_rtl/csr_file.v:856]
+WARNING: [Synth 8-6014] Unused sequential element penalty_start_cycle_reg was removed.  [/home/johnny/MPD/aquila_build/src/core_rtl/bpu_profiler.v:243]
+WARNING: [Synth 8-3848] Net flush2fet in module/entity core_top does not have driver. [/home/johnny/MPD/aquila_build/src/core_rtl/core_top.v:1495]
+WARNING: [Synth 8-3848] Net flush2dec in module/entity core_top does not have driver. [/home/johnny/MPD/aquila_build/src/core_rtl/core_top.v:1496]
+WARNING: [Synth 8-3848] Net m_i_strobe in module/entity aquila_top does not have driver. [/home/johnny/MPD/aquila_build/src/core_rtl/aquila_top.v:154]
+WARNING: [Synth 8-3848] Net m_i_addr in module/entity aquila_top does not have driver. [/home/johnny/MPD/aquila_build/src/core_rtl/aquila_top.v:156]
+WARNING: [Synth 8-3848] Net m_d_strobe in module/entity aquila_top does not have driver. [/home/johnny/MPD/aquila_build/src/core_rtl/aquila_top.v:155]
+WARNING: [Synth 8-3848] Net m_d_addr in module/entity aquila_top does not have driver. [/home/johnny/MPD/aquila_build/src/core_rtl/aquila_top.v:156]
+WARNING: [Synth 8-3848] Net m_d_rw in module/entity aquila_top does not have driver. [/home/johnny/MPD/aquila_build/src/core_rtl/aquila_top.v:155]
+WARNING: [Synth 8-3848] Net m_d_cache2dram in module/entity aquila_top does not have driver. [/home/johnny/MPD/aquila_build/src/core_rtl/aquila_top.v:157]
+WARNING: [Synth 8-3848] Net m_d_is_amo in module/entity aquila_top does not have driver. [/home/johnny/MPD/aquila_build/src/core_rtl/aquila_top.v:160]
+WARNING: [Synth 8-3848] Net m_d_amo_type in module/entity aquila_top does not have driver. [/home/johnny/MPD/aquila_build/src/core_rtl/aquila_top.v:161]
+WARNING: [Synth 8-3848] Net code_from_cache in module/entity aquila_top does not have driver. [/home/johnny/MPD/aquila_build/src/core_rtl/aquila_top.v:132]
+WARNING: [Synth 8-3848] Net cache_i_ready in module/entity aquila_top does not have driver. [/home/johnny/MPD/aquila_build/src/core_rtl/aquila_top.v:134]
+WARNING: [Synth 8-3848] Net data_from_cache in module/entity aquila_top does not have driver. [/home/johnny/MPD/aquila_build/src/core_rtl/aquila_top.v:149]
+WARNING: [Synth 8-3848] Net cache_d_ready in module/entity aquila_top does not have driver. [/home/johnny/MPD/aquila_build/src/core_rtl/aquila_top.v:151]
+WARNING: [Synth 8-6014] Unused sequential element sim_done_reg was removed.  [/home/johnny/MPD/aquila_build/src/soc_rtl/uart.v:150]
+WARNING: [Synth 8-6014] Unused sequential element uart_stateff_reg was removed.  [/home/johnny/MPD/aquila_build/src/soc_rtl/uart.v:180]
+WARNING: [Synth 8-3848] Net usr_led in module/entity soc_top does not have driver. [/home/johnny/MPD/aquila_build/src/soc_rtl/soc_top.v:113]
+WARNING: [Synth 8-3848] Net IMEM_done in module/entity soc_top does not have driver. [/home/johnny/MPD/aquila_build/src/soc_rtl/soc_top.v:133]
+WARNING: [Synth 8-3848] Net IMEM_data in module/entity soc_top does not have driver. [/home/johnny/MPD/aquila_build/src/soc_rtl/soc_top.v:134]
+WARNING: [Synth 8-3848] Net DMEM_done in module/entity soc_top does not have driver. [/home/johnny/MPD/aquila_build/src/soc_rtl/soc_top.v:141]
+WARNING: [Synth 8-3848] Net DMEM_rd_data in module/entity soc_top does not have driver. [/home/johnny/MPD/aquila_build/src/soc_rtl/soc_top.v:142]
+WARNING: [Synth 8-7129] Port S_DEVICE_addr_i[31] in module core2axi_if is either unconnected or has no load
+WARNING: [Synth 8-7129] Port S_DEVICE_addr_i[30] in module core2axi_if is either unconnected or has no load
+WARNING: [Synth 8-7129] Port S_DEVICE_addr_i[29] in module core2axi_if is either unconnected or has no load
+WARNING: [Synth 8-7129] Port S_DEVICE_addr_i[28] in module core2axi_if is either unconnected or has no load
+WARNING: [Synth 8-7129] Port S_DEVICE_addr_i[27] in module core2axi_if is either unconnected or has no load
+WARNING: [Synth 8-7129] Port S_DEVICE_addr_i[26] in module core2axi_if is either unconnected or has no load
+WARNING: [Synth 8-7129] Port S_DEVICE_addr_i[25] in module core2axi_if is either unconnected or has no load
+WARNING: [Synth 8-7129] Port S_DEVICE_addr_i[24] in module core2axi_if is either unconnected or has no load
+WARNING: [Synth 8-7129] Port S_DEVICE_addr_i[23] in module core2axi_if is either unconnected or has no load
+WARNING: [Synth 8-7129] Port S_DEVICE_addr_i[22] in module core2axi_if is either unconnected or has no load
+WARNING: [Synth 8-7129] Port S_DEVICE_addr_i[21] in module core2axi_if is either unconnected or has no load
+WARNING: [Synth 8-7129] Port S_DEVICE_addr_i[20] in module core2axi_if is either unconnected or has no load
+WARNING: [Synth 8-7129] Port S_DEVICE_addr_i[19] in module core2axi_if is either unconnected or has no load
+WARNING: [Synth 8-7129] Port S_DEVICE_addr_i[18] in module core2axi_if is either unconnected or has no load
+WARNING: [Synth 8-7129] Port S_DEVICE_addr_i[17] in module core2axi_if is either unconnected or has no load
+WARNING: [Synth 8-7129] Port S_DEVICE_addr_i[16] in module core2axi_if is either unconnected or has no load
+WARNING: [Synth 8-7129] Port S_DEVICE_addr_i[15] in module core2axi_if is either unconnected or has no load
+WARNING: [Synth 8-7129] Port S_DEVICE_addr_i[14] in module core2axi_if is either unconnected or has no load
+WARNING: [Synth 8-7129] Port S_DEVICE_addr_i[13] in module core2axi_if is either unconnected or has no load
+WARNING: [Synth 8-7129] Port S_DEVICE_addr_i[12] in module core2axi_if is either unconnected or has no load
+WARNING: [Synth 8-7129] Port S_DEVICE_addr_i[11] in module core2axi_if is either unconnected or has no load
+WARNING: [Synth 8-7129] Port S_DEVICE_addr_i[10] in module core2axi_if is either unconnected or has no load
+WARNING: [Synth 8-7129] Port S_DEVICE_addr_i[9] in module core2axi_if is either unconnected or has no load
+WARNING: [Synth 8-7129] Port S_DEVICE_addr_i[8] in module core2axi_if is either unconnected or has no load
+WARNING: [Synth 8-7129] Port S_DEVICE_addr_i[7] in module core2axi_if is either unconnected or has no load
+WARNING: [Synth 8-7129] Port m_axi_bresp[1] in module core2axi_if is either unconnected or has no load
+WARNING: [Synth 8-7129] Port m_axi_bresp[0] in module core2axi_if is either unconnected or has no load
+WARNING: [Synth 8-7129] Port m_axi_rresp[1] in module core2axi_if is either unconnected or has no load
+WARNING: [Synth 8-7129] Port m_axi_rresp[0] in module core2axi_if is either unconnected or has no load
+WARNING: [Synth 8-7129] Port BE[3] in module uart is either unconnected or has no load
+WARNING: [Synth 8-7129] Port BE[2] in module uart is either unconnected or has no load
+WARNING: [Synth 8-7129] Port BE[1] in module uart is either unconnected or has no load
+WARNING: [Synth 8-7129] Port BE[0] in module uart is either unconnected or has no load
+WARNING: [Synth 8-7129] Port DATAI[31] in module uart is either unconnected or has no load
+WARNING: [Synth 8-7129] Port DATAI[30] in module uart is either unconnected or has no load
+WARNING: [Synth 8-7129] Port DATAI[29] in module uart is either unconnected or has no load
+WARNING: [Synth 8-7129] Port DATAI[28] in module uart is either unconnected or has no load
+WARNING: [Synth 8-7129] Port DATAI[27] in module uart is either unconnected or has no load
+WARNING: [Synth 8-7129] Port DATAI[26] in module uart is either unconnected or has no load
+WARNING: [Synth 8-7129] Port DATAI[25] in module uart is either unconnected or has no load
+WARNING: [Synth 8-7129] Port DATAI[24] in module uart is either unconnected or has no load
+WARNING: [Synth 8-7129] Port DATAI[23] in module uart is either unconnected or has no load
+WARNING: [Synth 8-7129] Port DATAI[22] in module uart is either unconnected or has no load
+WARNING: [Synth 8-7129] Port DATAI[21] in module uart is either unconnected or has no load
+WARNING: [Synth 8-7129] Port DATAI[20] in module uart is either unconnected or has no load
+WARNING: [Synth 8-7129] Port DATAI[19] in module uart is either unconnected or has no load
+WARNING: [Synth 8-7129] Port DATAI[18] in module uart is either unconnected or has no load
+WARNING: [Synth 8-7129] Port DATAI[17] in module uart is either unconnected or has no load
+WARNING: [Synth 8-7129] Port DATAI[16] in module uart is either unconnected or has no load
+WARNING: [Synth 8-7129] Port DATAI[15] in module uart is either unconnected or has no load
+WARNING: [Synth 8-7129] Port DATAI[14] in module uart is either unconnected or has no load
+WARNING: [Synth 8-7129] Port DATAI[13] in module uart is either unconnected or has no load
+WARNING: [Synth 8-7129] Port DATAI[12] in module uart is either unconnected or has no load
+WARNING: [Synth 8-7129] Port DATAI[11] in module uart is either unconnected or has no load
+WARNING: [Synth 8-7129] Port DATAI[10] in module uart is either unconnected or has no load
+WARNING: [Synth 8-7129] Port DATAI[9] in module uart is either unconnected or has no load
+WARNING: [Synth 8-7129] Port DATAI[8] in module uart is either unconnected or has no load
+WARNING: [Synth 8-7129] Port core_id_i[0] in module atomic_unit is either unconnected or has no load
+WARNING: [Synth 8-7129] Port bht_write_addr_i[5] in module bpu_profiler is either unconnected or has no load
+WARNING: [Synth 8-7129] Port bht_write_addr_i[4] in module bpu_profiler is either unconnected or has no load
+WARNING: [Synth 8-7129] Port bht_write_addr_i[3] in module bpu_profiler is either unconnected or has no load
+WARNING: [Synth 8-7129] Port bht_write_addr_i[2] in module bpu_profiler is either unconnected or has no load
+WARNING: [Synth 8-7129] Port bht_write_addr_i[1] in module bpu_profiler is either unconnected or has no load
+WARNING: [Synth 8-7129] Port bht_write_addr_i[0] in module bpu_profiler is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pc_i[31] in module csr_file is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pc_i[30] in module csr_file is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pc_i[29] in module csr_file is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pc_i[28] in module csr_file is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pc_i[27] in module csr_file is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pc_i[26] in module csr_file is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pc_i[25] in module csr_file is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pc_i[24] in module csr_file is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pc_i[23] in module csr_file is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pc_i[22] in module csr_file is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pc_i[21] in module csr_file is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pc_i[20] in module csr_file is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pc_i[19] in module csr_file is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pc_i[18] in module csr_file is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pc_i[17] in module csr_file is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pc_i[16] in module csr_file is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pc_i[15] in module csr_file is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pc_i[14] in module csr_file is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pc_i[13] in module csr_file is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pc_i[12] in module csr_file is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pc_i[11] in module csr_file is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pc_i[10] in module csr_file is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pc_i[9] in module csr_file is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pc_i[8] in module csr_file is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pc_i[7] in module csr_file is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pc_i[6] in module csr_file is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pc_i[5] in module csr_file is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pc_i[4] in module csr_file is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pc_i[3] in module csr_file is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pc_i[2] in module csr_file is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pc_i[1] in module csr_file is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pc_i[0] in module csr_file is either unconnected or has no load
+WARNING: [Synth 8-7129] Port bpu_branch_hit_i in module program_counter is either unconnected or has no load
+WARNING: [Synth 8-7129] Port bpu_branch_decision_i in module program_counter is either unconnected or has no load
+WARNING: [Synth 8-7129] Port bpu_branch_target_addr_i[31] in module program_counter is either unconnected or has no load
+WARNING: [Synth 8-7129] Port bpu_branch_target_addr_i[30] in module program_counter is either unconnected or has no load
+INFO: [Common 17-14] Message 'Synth 8-7129' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:13 ; elapsed = 00:00:16 . Memory (MB): peak = 2307.766 ; gain = 567.652 ; free physical = 1349 ; free virtual = 12986
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:13 ; elapsed = 00:00:17 . Memory (MB): peak = 2319.641 ; gain = 579.527 ; free physical = 1349 ; free virtual = 12986
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:13 ; elapsed = 00:00:17 . Memory (MB): peak = 2319.641 ; gain = 579.527 ; free physical = 1349 ; free virtual = 12986
+---------------------------------------------------------------------------------
+Netlist sorting complete. Time (s): cpu = 00:00:00.27 ; elapsed = 00:00:00.28 . Memory (MB): peak = 2319.641 ; gain = 0.000 ; free physical = 1344 ; free virtual = 12981
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [/home/johnny/MPD/aquila_build/aquila_ap/aquila_ap.gen/sources_1/ip/axi_quad_spi_0/axi_quad_spi_0/axi_quad_spi_0_in_context.xdc] for cell 'SD_Card_Controller'
+Finished Parsing XDC File [/home/johnny/MPD/aquila_build/aquila_ap/aquila_ap.gen/sources_1/ip/axi_quad_spi_0/axi_quad_spi_0/axi_quad_spi_0_in_context.xdc] for cell 'SD_Card_Controller'
+Parsing XDC File [/home/johnny/MPD/aquila_build/aquila_ap/aquila_ap.gen/sources_1/ip/clk_wiz_0/clk_wiz_0/clk_wiz_0_in_context.xdc] for cell 'Clock_Generator'
+Finished Parsing XDC File [/home/johnny/MPD/aquila_build/aquila_ap/aquila_ap.gen/sources_1/ip/clk_wiz_0/clk_wiz_0/clk_wiz_0_in_context.xdc] for cell 'Clock_Generator'
+Parsing XDC File [/home/johnny/MPD/aquila_build/src/xdc/arty.xdc]
+Finished Parsing XDC File [/home/johnny/MPD/aquila_build/src/xdc/arty.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [/home/johnny/MPD/aquila_build/src/xdc/arty.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/soc_top_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/soc_top_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2470.391 ; gain = 0.000 ; free physical = 1326 ; free virtual = 12978
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00.06 ; elapsed = 00:00:00.06 . Memory (MB): peak = 2470.391 ; gain = 0.000 ; free physical = 1326 ; free virtual = 12979
+INFO: [Designutils 20-5440] No compile time benefit to using incremental synthesis; A full resynthesis will be run
+INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:27 ; elapsed = 00:00:30 . Memory (MB): peak = 2470.391 ; gain = 730.277 ; free physical = 1324 ; free virtual = 12977
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7a100tcsg324-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:27 ; elapsed = 00:00:30 . Memory (MB): peak = 2470.391 ; gain = 730.277 ; free physical = 1324 ; free virtual = 12977
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+Applied set_property IO_BUFFER_TYPE = NONE for sys_clk_i. (constraint file  /home/johnny/MPD/aquila_build/aquila_ap/aquila_ap.gen/sources_1/ip/clk_wiz_0/clk_wiz_0/clk_wiz_0_in_context.xdc, line 5).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for sys_clk_i. (constraint file  /home/johnny/MPD/aquila_build/aquila_ap/aquila_ap.gen/sources_1/ip/clk_wiz_0/clk_wiz_0/clk_wiz_0_in_context.xdc, line 6).
+Applied set_property KEEP_HIERARCHY = SOFT for SD_Card_Controller. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for Clock_Generator. (constraint file  auto generated constraint).
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:27 ; elapsed = 00:00:30 . Memory (MB): peak = 2470.391 ; gain = 730.277 ; free physical = 1324 ; free virtual = 12977
+---------------------------------------------------------------------------------
+INFO: [Synth 8-802] inferred FSM for state register 'S_reg' in module 'muldiv'
+INFO: [Synth 8-802] inferred FSM for state register 'dS_reg' in module 'core_top'
+INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'atomic_unit'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                  S_IDLE |                            00001 |                              000
+                  S_CALC |                            10000 |                              001
+           S_SIGN_ADJUST |                            01000 |                              010
+                  S_DONE |                            00100 |                              011
+                 S_STALL |                            00010 |                              100
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'S_reg' using encoding 'one-hot' in module 'muldiv'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                  d_IDLE |                               00 |                               00
+                  d_WAIT |                               01 |                               01
+                 d_STALL |                               10 |                               10
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'dS_reg' using encoding 'sequential' in module 'core_top'
+WARNING: [Synth 8-6841] Block RAM (RAM_reg) originally specified as a Byte Wide Write Enable RAM cannot take advantage of ByteWide feature and is implemented with single write enable per RAM due to following reason.
+(address width (14) is more than optimal threshold of 12. Implementing using BWWE will require more logic and timing would be suboptimal. Please use attribute ram_decomp = power if BWWE is desired.)
+INFO: [Synth 8-3971] The signal "sram_dp:/RAM_reg" was recognized as a true dual port RAM template.
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                  Bypass |                              000 |                              000
+                   AmoRd |                              100 |                              001
+                    Wait |                              011 |                              110
+                   AmoWr |                              010 |                              010
+               AmoFinish |                              001 |                              011
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'sequential' in module 'atomic_unit'
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:30 ; elapsed = 00:00:33 . Memory (MB): peak = 2470.391 ; gain = 730.277 ; free physical = 1328 ; free virtual = 12983
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input   65 Bit       Adders := 1     
+	   2 Input   64 Bit       Adders := 3     
+	   2 Input   33 Bit       Adders := 2     
+	   2 Input   32 Bit       Adders := 10    
+	   2 Input   16 Bit       Adders := 1     
+	   2 Input    6 Bit       Adders := 1     
+	   2 Input    4 Bit       Adders := 3     
+	   2 Input    3 Bit       Adders := 1     
+	   2 Input    2 Bit       Adders := 1     
++---XORs : 
+	   2 Input     32 Bit         XORs := 2     
+	   2 Input      4 Bit         XORs := 1     
+	   2 Input      1 Bit         XORs := 4     
++---Registers : 
+	              128 Bit    Registers := 1     
+	               65 Bit    Registers := 1     
+	               64 Bit    Registers := 26    
+	               32 Bit    Registers := 103   
+	               30 Bit    Registers := 1     
+	               16 Bit    Registers := 1     
+	               12 Bit    Registers := 3     
+	                8 Bit    Registers := 2     
+	                7 Bit    Registers := 2     
+	                6 Bit    Registers := 1     
+	                5 Bit    Registers := 8     
+	                4 Bit    Registers := 6     
+	                3 Bit    Registers := 6     
+	                2 Bit    Registers := 74    
+	                1 Bit    Registers := 89    
++---Multipliers : 
+	              32x32  Multipliers := 1     
++---RAMs : 
+	             512K Bit	(16384 X 32 bit)          RAMs := 1     
++---Muxes : 
+	   2 Input  128 Bit        Muxes := 2     
+	   2 Input   65 Bit        Muxes := 14    
+	   3 Input   65 Bit        Muxes := 1     
+	   2 Input   64 Bit        Muxes := 3     
+	   3 Input   64 Bit        Muxes := 1     
+	   2 Input   33 Bit        Muxes := 1     
+	   2 Input   32 Bit        Muxes := 84    
+	   4 Input   32 Bit        Muxes := 18    
+	   3 Input   32 Bit        Muxes := 2     
+	   2 Input   30 Bit        Muxes := 1     
+	   2 Input   26 Bit        Muxes := 1     
+	   4 Input   18 Bit        Muxes := 1     
+	   2 Input   16 Bit        Muxes := 2     
+	   2 Input   13 Bit        Muxes := 1     
+	   2 Input    9 Bit        Muxes := 1     
+	   2 Input    8 Bit        Muxes := 3     
+	   2 Input    5 Bit        Muxes := 6     
+	   5 Input    5 Bit        Muxes := 1     
+	   2 Input    4 Bit        Muxes := 9     
+	   4 Input    4 Bit        Muxes := 1     
+	   6 Input    4 Bit        Muxes := 1     
+	   6 Input    3 Bit        Muxes := 2     
+	   3 Input    3 Bit        Muxes := 1     
+	   5 Input    3 Bit        Muxes := 3     
+	   2 Input    3 Bit        Muxes := 8     
+	   2 Input    2 Bit        Muxes := 11    
+	   5 Input    2 Bit        Muxes := 2     
+	   3 Input    2 Bit        Muxes := 5     
+	   4 Input    2 Bit        Muxes := 2     
+	   2 Input    1 Bit        Muxes := 243   
+	   6 Input    1 Bit        Muxes := 2     
+	   4 Input    1 Bit        Muxes := 6     
+	   3 Input    1 Bit        Muxes := 3     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 240 (col length:80)
+BRAMs: 270 (col length: RAMB18 80 RAMB36 40)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-7080] Parallel synthesis criteria is not met
+DSP Report: Generating DSP mul00, operation Mode is: A2*B2.
+DSP Report: register op_a_r_reg is absorbed into DSP mul00.
+DSP Report: register mul00 is absorbed into DSP mul00.
+DSP Report: operator mul00 is absorbed into DSP mul00.
+DSP Report: operator mul00 is absorbed into DSP mul00.
+DSP Report: Generating DSP mul0_reg, operation Mode is: (PCIN>>17)+A2*B2.
+DSP Report: register op_b_r_reg is absorbed into DSP mul0_reg.
+DSP Report: register op_a_r_reg is absorbed into DSP mul0_reg.
+DSP Report: register mul0_reg is absorbed into DSP mul0_reg.
+DSP Report: operator mul00 is absorbed into DSP mul0_reg.
+DSP Report: operator mul00 is absorbed into DSP mul0_reg.
+DSP Report: Generating DSP mul00, operation Mode is: A2*B2.
+DSP Report: register mul00 is absorbed into DSP mul00.
+DSP Report: register mul00 is absorbed into DSP mul00.
+DSP Report: operator mul00 is absorbed into DSP mul00.
+DSP Report: operator mul00 is absorbed into DSP mul00.
+DSP Report: Generating DSP mul0_reg, operation Mode is: (PCIN>>17)+A2*B2.
+DSP Report: register op_b_r_reg is absorbed into DSP mul0_reg.
+DSP Report: register mul0_reg is absorbed into DSP mul0_reg.
+DSP Report: register mul0_reg is absorbed into DSP mul0_reg.
+DSP Report: operator mul00 is absorbed into DSP mul0_reg.
+DSP Report: operator mul00 is absorbed into DSP mul0_reg.
+WARNING: [Synth 8-6841] Block RAM (Aquila_SoC/TCM/RAM_reg) originally specified as a Byte Wide Write Enable RAM cannot take advantage of ByteWide feature and is implemented with single write enable per RAM due to following reason.
+(address width (14) is more than optimal threshold of 12. Implementing using BWWE will require more logic and timing would be suboptimal. Please use attribute ram_decomp = power if BWWE is desired.)
+INFO: [Synth 8-3971] The signal "soc_top/Aquila_SoC/TCM/RAM_reg" was recognized as a true dual port RAM template.
+WARNING: [Synth 8-3332] Sequential element (mul0_reg[47]) is unused and will be removed from module muldiv.
+WARNING: [Synth 8-3332] Sequential element (mul0_reg[46]) is unused and will be removed from module muldiv.
+WARNING: [Synth 8-3332] Sequential element (mul0_reg[45]) is unused and will be removed from module muldiv.
+WARNING: [Synth 8-3332] Sequential element (mul0_reg[44]) is unused and will be removed from module muldiv.
+WARNING: [Synth 8-3332] Sequential element (mul0_reg[43]) is unused and will be removed from module muldiv.
+WARNING: [Synth 8-3332] Sequential element (mul0_reg[42]) is unused and will be removed from module muldiv.
+WARNING: [Synth 8-3332] Sequential element (mul0_reg[41]) is unused and will be removed from module muldiv.
+WARNING: [Synth 8-3332] Sequential element (mul0_reg[40]) is unused and will be removed from module muldiv.
+WARNING: [Synth 8-3332] Sequential element (mul0_reg[39]) is unused and will be removed from module muldiv.
+WARNING: [Synth 8-3332] Sequential element (mul0_reg[38]) is unused and will be removed from module muldiv.
+WARNING: [Synth 8-3332] Sequential element (mul0_reg[37]) is unused and will be removed from module muldiv.
+WARNING: [Synth 8-3332] Sequential element (mul0_reg[36]) is unused and will be removed from module muldiv.
+WARNING: [Synth 8-3332] Sequential element (mul0_reg[35]) is unused and will be removed from module muldiv.
+WARNING: [Synth 8-3332] Sequential element (mul0_reg[34]) is unused and will be removed from module muldiv.
+WARNING: [Synth 8-3332] Sequential element (mul0_reg[33]) is unused and will be removed from module muldiv.
+WARNING: [Synth 8-3332] Sequential element (mul0_reg[32]) is unused and will be removed from module muldiv.
+WARNING: [Synth 8-3332] Sequential element (mul0_reg[31]) is unused and will be removed from module muldiv.
+WARNING: [Synth 8-3332] Sequential element (mul0_reg[30]) is unused and will be removed from module muldiv.
+WARNING: [Synth 8-3332] Sequential element (mul0_reg[29]) is unused and will be removed from module muldiv.
+WARNING: [Synth 8-3332] Sequential element (mul0_reg[28]) is unused and will be removed from module muldiv.
+WARNING: [Synth 8-3332] Sequential element (mul0_reg[27]) is unused and will be removed from module muldiv.
+WARNING: [Synth 8-3332] Sequential element (mul0_reg[26]) is unused and will be removed from module muldiv.
+WARNING: [Synth 8-3332] Sequential element (mul0_reg[25]) is unused and will be removed from module muldiv.
+WARNING: [Synth 8-3332] Sequential element (mul0_reg[24]) is unused and will be removed from module muldiv.
+WARNING: [Synth 8-3332] Sequential element (mul0_reg[23]) is unused and will be removed from module muldiv.
+WARNING: [Synth 8-3332] Sequential element (mul0_reg[22]) is unused and will be removed from module muldiv.
+WARNING: [Synth 8-3332] Sequential element (mul0_reg[21]) is unused and will be removed from module muldiv.
+WARNING: [Synth 8-3332] Sequential element (mul0_reg[20]) is unused and will be removed from module muldiv.
+WARNING: [Synth 8-3332] Sequential element (mul0_reg[19]) is unused and will be removed from module muldiv.
+WARNING: [Synth 8-3332] Sequential element (mul0_reg[18]) is unused and will be removed from module muldiv.
+WARNING: [Synth 8-3332] Sequential element (mul0_reg[17]) is unused and will be removed from module muldiv.
+WARNING: [Synth 8-3332] Sequential element (mul0_reg[47]__0) is unused and will be removed from module muldiv.
+WARNING: [Synth 8-3332] Sequential element (mul0_reg[46]__0) is unused and will be removed from module muldiv.
+WARNING: [Synth 8-3332] Sequential element (mul0_reg[45]__0) is unused and will be removed from module muldiv.
+WARNING: [Synth 8-3332] Sequential element (mul0_reg[44]__0) is unused and will be removed from module muldiv.
+WARNING: [Synth 8-3332] Sequential element (mul0_reg[43]__0) is unused and will be removed from module muldiv.
+WARNING: [Synth 8-3332] Sequential element (mul0_reg[42]__0) is unused and will be removed from module muldiv.
+WARNING: [Synth 8-3332] Sequential element (mul0_reg[41]__0) is unused and will be removed from module muldiv.
+WARNING: [Synth 8-3332] Sequential element (mul0_reg[40]__0) is unused and will be removed from module muldiv.
+WARNING: [Synth 8-3332] Sequential element (mul0_reg[39]__0) is unused and will be removed from module muldiv.
+WARNING: [Synth 8-3332] Sequential element (mul0_reg[38]__0) is unused and will be removed from module muldiv.
+WARNING: [Synth 8-3332] Sequential element (mul0_reg[37]__0) is unused and will be removed from module muldiv.
+WARNING: [Synth 8-3332] Sequential element (mul0_reg[36]__0) is unused and will be removed from module muldiv.
+WARNING: [Synth 8-3332] Sequential element (mul0_reg[35]__0) is unused and will be removed from module muldiv.
+WARNING: [Synth 8-3332] Sequential element (mul0_reg[34]__0) is unused and will be removed from module muldiv.
+WARNING: [Synth 8-3332] Sequential element (mul0_reg[33]__0) is unused and will be removed from module muldiv.
+WARNING: [Synth 8-3332] Sequential element (mul0_reg[32]__0) is unused and will be removed from module muldiv.
+WARNING: [Synth 8-3332] Sequential element (mul0_reg[31]__0) is unused and will be removed from module muldiv.
+WARNING: [Synth 8-3332] Sequential element (mul0_reg[30]__0) is unused and will be removed from module muldiv.
+WARNING: [Synth 8-3332] Sequential element (mul0_reg[29]__0) is unused and will be removed from module muldiv.
+WARNING: [Synth 8-3332] Sequential element (mul0_reg[28]__0) is unused and will be removed from module muldiv.
+WARNING: [Synth 8-3332] Sequential element (mul0_reg[27]__0) is unused and will be removed from module muldiv.
+WARNING: [Synth 8-3332] Sequential element (mul0_reg[26]__0) is unused and will be removed from module muldiv.
+WARNING: [Synth 8-3332] Sequential element (mul0_reg[25]__0) is unused and will be removed from module muldiv.
+WARNING: [Synth 8-3332] Sequential element (mul0_reg[24]__0) is unused and will be removed from module muldiv.
+WARNING: [Synth 8-3332] Sequential element (mul0_reg[23]__0) is unused and will be removed from module muldiv.
+WARNING: [Synth 8-3332] Sequential element (mul0_reg[22]__0) is unused and will be removed from module muldiv.
+WARNING: [Synth 8-3332] Sequential element (mul0_reg[21]__0) is unused and will be removed from module muldiv.
+WARNING: [Synth 8-3332] Sequential element (mul0_reg[20]__0) is unused and will be removed from module muldiv.
+WARNING: [Synth 8-3332] Sequential element (mul0_reg[19]__0) is unused and will be removed from module muldiv.
+WARNING: [Synth 8-3332] Sequential element (mul0_reg[18]__0) is unused and will be removed from module muldiv.
+WARNING: [Synth 8-3332] Sequential element (mul0_reg[17]__0) is unused and will be removed from module muldiv.
+WARNING: [Synth 8-3332] Sequential element (Aquila_SoC/ATOM_U/FSM_sequential_state_reg[2]) is unused and will be removed from module soc_top.
+WARNING: [Synth 8-3332] Sequential element (Aquila_SoC/ATOM_U/FSM_sequential_state_reg[1]) is unused and will be removed from module soc_top.
+WARNING: [Synth 8-3332] Sequential element (Aquila_SoC/ATOM_U/FSM_sequential_state_reg[0]) is unused and will be removed from module soc_top.
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:01:12 ; elapsed = 00:01:17 . Memory (MB): peak = 2470.391 ; gain = 730.277 ; free physical = 1307 ; free virtual = 12977
+---------------------------------------------------------------------------------
+ Sort Area is  mul00_0 : 0 0 : 3137 5997 : Used 1 time 0
+ Sort Area is  mul00_0 : 0 1 : 2860 5997 : Used 1 time 0
+ Sort Area is  mul00_3 : 0 0 : 2793 5532 : Used 1 time 0
+ Sort Area is  mul00_3 : 0 1 : 2739 5532 : Used 1 time 0
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+
+Block RAM: Preliminary Mapping Report (see note below)
++------------+------------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+|Module Name | RTL Object             | PORT A (Depth x Width) | W | R | PORT B (Depth x Width) | W | R | Ports driving FF | RAMB18 | RAMB36 | 
++------------+------------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+|soc_top     | Aquila_SoC/TCM/RAM_reg | 16 K x 32(READ_FIRST)  | W | R | 16 K x 32(READ_FIRST)  | W | R | Port A and B     | 0      | 16     | 
++------------+------------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+
+Note: The table above is a preliminary report that shows the Block RAMs at the current stage of the synthesis flow. Some Block RAMs may be reimplemented as non Block RAM primitives later in the synthesis flow. Multiple instantiated Block RAMs are reported only once. 
+
+Distributed RAM: Preliminary Mapping Report (see note below)
++------------------------------------------------+-----------------+-----------+----------------------+--------------+
+|Module Name                                     | RTL Object      | Inference | Size (Depth x Width) | Primitives   | 
++------------------------------------------------+-----------------+-----------+----------------------+--------------+
+|\Aquila_SoC/RISCV_CORE0 /Branch_Prediction_Unit | BPU_BHT/RAM_reg | Implied   | 64 x 64              | RAM64M x 22  | 
++------------------------------------------------+-----------------+-----------+----------------------+--------------+
+
+Note: The table above is a preliminary report that shows the Distributed RAMs at the current stage of the synthesis flow. Some Distributed RAMs may be reimplemented as non Distributed RAM primitives later in the synthesis flow. Multiple instantiated RAMs are reported only once.
+
+DSP: Preliminary Mapping Report (see note below. The ' indicates corresponding REG is set)
++------------+------------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|Module Name | DSP Mapping      | A Size | B Size | C Size | D Size | P Size | AREG | BREG | CREG | DREG | ADREG | MREG | PREG | 
++------------+------------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|muldiv      | A2*B2            | 18     | 16     | -      | -      | 48     | 1    | 1    | -    | -    | -     | 0    | 0    | 
+|muldiv      | (PCIN>>17)+A2*B2 | 16     | 16     | -      | -      | 48     | 1    | 1    | -    | -    | -     | 0    | 1    | 
+|muldiv      | A2*B2            | 18     | 18     | -      | -      | 48     | 1    | 1    | -    | -    | -     | 0    | 0    | 
+|muldiv      | (PCIN>>17)+A2*B2 | 18     | 16     | -      | -      | 48     | 1    | 1    | -    | -    | -     | 0    | 1    | 
++------------+------------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+
+Note: The table above is a preliminary report that shows the DSPs inferred at the current stage of the synthesis flow. Some DSP may be reimplemented as non DSP primitives later in the synthesis flow. Multiple instantiated DSPs are reported only once.
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:01:23 ; elapsed = 00:01:28 . Memory (MB): peak = 2470.391 ; gain = 730.277 ; free physical = 1298 ; free virtual = 12975
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:01:44 ; elapsed = 00:01:49 . Memory (MB): peak = 2470.391 ; gain = 730.277 ; free physical = 1244 ; free virtual = 12921
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+
+Block RAM: Final Mapping Report
++------------+------------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+|Module Name | RTL Object             | PORT A (Depth x Width) | W | R | PORT B (Depth x Width) | W | R | Ports driving FF | RAMB18 | RAMB36 | 
++------------+------------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+|soc_top     | Aquila_SoC/TCM/RAM_reg | 16 K x 32(READ_FIRST)  | W | R | 16 K x 32(READ_FIRST)  | W | R | Port A and B     | 0      | 16     | 
++------------+------------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+
+
+Distributed RAM: Final Mapping Report
++------------------------------------------------+-----------------+-----------+----------------------+--------------+
+|Module Name                                     | RTL Object      | Inference | Size (Depth x Width) | Primitives   | 
++------------------------------------------------+-----------------+-----------+----------------------+--------------+
+|\Aquila_SoC/RISCV_CORE0 /Branch_Prediction_Unit | BPU_BHT/RAM_reg | Implied   | 64 x 64              | RAM64M x 22  | 
++------------------------------------------------+-----------------+-----------+----------------------+--------------+
+
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+INFO: [Synth 8-7052] The timing for the instance Aquila_SoC/TCM/RAM_reg_0_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance Aquila_SoC/TCM/RAM_reg_0_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance Aquila_SoC/TCM/RAM_reg_0_1 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance Aquila_SoC/TCM/RAM_reg_0_1 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance Aquila_SoC/TCM/RAM_reg_0_2 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance Aquila_SoC/TCM/RAM_reg_0_2 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance Aquila_SoC/TCM/RAM_reg_0_3 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance Aquila_SoC/TCM/RAM_reg_0_3 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance Aquila_SoC/TCM/RAM_reg_1_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance Aquila_SoC/TCM/RAM_reg_1_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance Aquila_SoC/TCM/RAM_reg_1_1 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance Aquila_SoC/TCM/RAM_reg_1_1 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance Aquila_SoC/TCM/RAM_reg_1_2 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance Aquila_SoC/TCM/RAM_reg_1_2 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance Aquila_SoC/TCM/RAM_reg_1_3 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance Aquila_SoC/TCM/RAM_reg_1_3 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance Aquila_SoC/TCM/RAM_reg_2_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance Aquila_SoC/TCM/RAM_reg_2_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance Aquila_SoC/TCM/RAM_reg_2_1 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance Aquila_SoC/TCM/RAM_reg_2_1 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance Aquila_SoC/TCM/RAM_reg_2_2 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance Aquila_SoC/TCM/RAM_reg_2_2 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance Aquila_SoC/TCM/RAM_reg_2_3 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance Aquila_SoC/TCM/RAM_reg_2_3 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance Aquila_SoC/TCM/RAM_reg_3_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance Aquila_SoC/TCM/RAM_reg_3_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance Aquila_SoC/TCM/RAM_reg_3_1 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance Aquila_SoC/TCM/RAM_reg_3_1 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance Aquila_SoC/TCM/RAM_reg_3_2 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance Aquila_SoC/TCM/RAM_reg_3_2 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance Aquila_SoC/TCM/RAM_reg_3_3 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance Aquila_SoC/TCM/RAM_reg_3_3 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:01:50 ; elapsed = 00:01:56 . Memory (MB): peak = 2504.398 ; gain = 764.285 ; free physical = 1203 ; free virtual = 12879
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:01:59 ; elapsed = 00:02:05 . Memory (MB): peak = 2504.398 ; gain = 764.285 ; free physical = 1200 ; free virtual = 12877
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:01:59 ; elapsed = 00:02:05 . Memory (MB): peak = 2504.398 ; gain = 764.285 ; free physical = 1200 ; free virtual = 12877
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:02:01 ; elapsed = 00:02:07 . Memory (MB): peak = 2504.398 ; gain = 764.285 ; free physical = 1201 ; free virtual = 12878
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:02:01 ; elapsed = 00:02:08 . Memory (MB): peak = 2504.398 ; gain = 764.285 ; free physical = 1201 ; free virtual = 12878
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:02:02 ; elapsed = 00:02:08 . Memory (MB): peak = 2504.398 ; gain = 764.285 ; free physical = 1201 ; free virtual = 12878
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:02:02 ; elapsed = 00:02:08 . Memory (MB): peak = 2504.398 ; gain = 764.285 ; free physical = 1201 ; free virtual = 12878
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+DSP Final Report (the ' indicates corresponding REG is set)
++------------+-------------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|Module Name | DSP Mapping       | A Size | B Size | C Size | D Size | P Size | AREG | BREG | CREG | DREG | ADREG | MREG | PREG | 
++------------+-------------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|muldiv      | A'*B'             | 17     | 15     | -      | -      | 48     | 1    | 1    | -    | -    | -     | 0    | 0    | 
+|muldiv      | (PCIN>>17+A'*B')' | 15     | 15     | -      | -      | 48     | 1    | 1    | -    | -    | -     | 0    | 1    | 
+|muldiv      | A'*B'             | 17     | 17     | -      | -      | 48     | 1    | 1    | -    | -    | -     | 0    | 0    | 
+|muldiv      | (PCIN>>17+A'*B')' | 17     | 15     | -      | -      | 48     | 1    | 1    | -    | -    | -     | 0    | 1    | 
++------------+-------------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+
+
+Report BlackBoxes: 
++------+---------------+----------+
+|      |BlackBox name  |Instances |
++------+---------------+----------+
+|1     |clk_wiz_0      |         1|
+|2     |axi_quad_spi_0 |         1|
++------+---------------+----------+
+
+Report Cell Usage: 
++------+-------------+------+
+|      |Cell         |Count |
++------+-------------+------+
+|1     |axi_quad_spi |     1|
+|2     |clk_wiz      |     1|
+|3     |CARRY4       |   376|
+|4     |DSP48E1      |     4|
+|6     |LUT1         |   273|
+|7     |LUT2         |   386|
+|8     |LUT3         |   384|
+|9     |LUT4         |   855|
+|10    |LUT5         |   866|
+|11    |LUT6         |  1967|
+|12    |MUXF7        |   276|
+|13    |MUXF8        |   129|
+|14    |RAM64M       |    11|
+|15    |RAMB36E1     |    16|
+|31    |FDRE         |  5041|
+|32    |FDSE         |    33|
+|33    |IBUF         |     3|
+|34    |OBUF         |     4|
+|35    |OBUFT        |     4|
++------+-------------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:02:02 ; elapsed = 00:02:08 . Memory (MB): peak = 2504.398 ; gain = 764.285 ; free physical = 1201 ; free virtual = 12878
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 348 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:01:57 ; elapsed = 00:02:03 . Memory (MB): peak = 2504.398 ; gain = 613.535 ; free physical = 1201 ; free virtual = 12878
+Synthesis Optimization Complete : Time (s): cpu = 00:02:02 ; elapsed = 00:02:08 . Memory (MB): peak = 2504.406 ; gain = 764.285 ; free physical = 1201 ; free virtual = 12878
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:00.13 ; elapsed = 00:00:00.13 . Memory (MB): peak = 2504.406 ; gain = 0.000 ; free physical = 1499 ; free virtual = 13179
+INFO: [Netlist 29-17] Analyzing 812 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2539.383 ; gain = 0.000 ; free physical = 1499 ; free virtual = 13179
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 11 instances were transformed.
+  RAM64M => RAM64M (RAMD64E(x4)): 11 instances
+
+Synth Design complete | Checksum: 5c907f00
+INFO: [Common 17-83] Releasing license: Synthesis
+123 Infos, 205 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:02:21 ; elapsed = 00:02:24 . Memory (MB): peak = 2539.383 ; gain = 1150.246 ; free physical = 1499 ; free virtual = 13179
+INFO: [Common 17-2834] synth_design peak Physical Memory [PSS] (MB): overall = 2105.292; main = 1766.509; forked = 391.367
+INFO: [Common 17-2834] synth_design peak Virtual Memory [VSS] (MB): overall = 3536.910; main = 2539.387; forked = 1032.508
+Write ShapeDB Complete: Time (s): cpu = 00:00:00.06 ; elapsed = 00:00:00.02 . Memory (MB): peak = 2563.395 ; gain = 0.000 ; free physical = 1498 ; free virtual = 13178
+INFO: [Common 17-1381] The checkpoint '/home/johnny/MPD/aquila_build/aquila_ap/aquila_ap.runs/synth_1/soc_top.dcp' has been generated.
+INFO: [Vivado 12-24828] Executing command : report_utilization -file soc_top_utilization_synth.rpt -pb soc_top_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Wed Oct 22 13:29:07 2025...

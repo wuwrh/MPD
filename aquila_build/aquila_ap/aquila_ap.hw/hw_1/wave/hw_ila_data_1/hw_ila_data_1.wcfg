@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="/home/johnny/MPD/aquila_build/aquila_ap/aquila_ap.hw/hw_1/wave/hw_ila_data_1/hw_ila_data_1.wdb" id="1">
+         <top_modules>
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="0"></ZoomStartTime>
+      <ZoomEndTime time="4,097"></ZoomEndTime>
+      <Cursor1Time time="0"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="535"></NameColumnWidth>
+      <ValueColumnWidth column_width="138"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="27" />
+   <wave_markers>
+   </wave_markers>
+   <wvobject type="array" fp_name="Aquila_SoC/RISCV_CORE0/BPU_Profiler/bht_hit_rate_denominator_debug">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">Aquila_SoC/RISCV_CORE0/BPU_Profiler/bht_hit_rate_denominator_debug[63:0]</obj_property>
+      <obj_property name="ObjectShortName">bht_hit_rate_denominator_debug[63:0]</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="Aquila_SoC/RISCV_CORE0/BPU_Profiler/bht_hit_rate_numerator_debug">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">Aquila_SoC/RISCV_CORE0/BPU_Profiler/bht_hit_rate_numerator_debug[63:0]</obj_property>
+      <obj_property name="ObjectShortName">bht_hit_rate_numerator_debug[63:0]</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="Aquila_SoC/RISCV_CORE0/BPU_Profiler/bht_hits_debug">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">Aquila_SoC/RISCV_CORE0/BPU_Profiler/bht_hits_debug[63:0]</obj_property>
+      <obj_property name="ObjectShortName">bht_hits_debug[63:0]</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="Aquila_SoC/RISCV_CORE0/BPU_Profiler/incorrect_predictions_debug">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">Aquila_SoC/RISCV_CORE0/BPU_Profiler/incorrect_predictions_debug[63:0]</obj_property>
+      <obj_property name="ObjectShortName">incorrect_predictions_debug[63:0]</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="Aquila_SoC/RISCV_CORE0/BPU_Profiler/bht_misses_debug">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">Aquila_SoC/RISCV_CORE0/BPU_Profiler/bht_misses_debug[63:0]</obj_property>
+      <obj_property name="ObjectShortName">bht_misses_debug[63:0]</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="Aquila_SoC/RISCV_CORE0/BPU_Profiler/correct_predictions_debug">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">Aquila_SoC/RISCV_CORE0/BPU_Profiler/correct_predictions_debug[63:0]</obj_property>
+      <obj_property name="ObjectShortName">correct_predictions_debug[63:0]</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="Aquila_SoC/RISCV_CORE0/BPU_Profiler/mispred_penalty_debug">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">Aquila_SoC/RISCV_CORE0/BPU_Profiler/mispred_penalty_debug[63:0]</obj_property>
+      <obj_property name="ObjectShortName">mispred_penalty_debug[63:0]</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="Aquila_SoC/RISCV_CORE0/BPU_Profiler/total_branches_debug">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">Aquila_SoC/RISCV_CORE0/BPU_Profiler/total_branches_debug[63:0]</obj_property>
+      <obj_property name="ObjectShortName">total_branches_debug[63:0]</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="Aquila_SoC/RISCV_CORE0/BPU_Profiler/prediction_accuracy_denominator_debug">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">Aquila_SoC/RISCV_CORE0/BPU_Profiler/prediction_accuracy_denominator_debug[63:0]</obj_property>
+      <obj_property name="ObjectShortName">prediction_accuracy_denominator_debug[63:0]</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="Aquila_SoC/RISCV_CORE0/BPU_Profiler/prediction_accuracy_numerator_debug">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">Aquila_SoC/RISCV_CORE0/BPU_Profiler/prediction_accuracy_numerator_debug[63:0]</obj_property>
+      <obj_property name="ObjectShortName">prediction_accuracy_numerator_debug[63:0]</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="Aquila_SoC/RISCV_CORE0/BPU_Profiler/penalty_counting_debug">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">Aquila_SoC/RISCV_CORE0/BPU_Profiler/penalty_counting_debug</obj_property>
+      <obj_property name="ObjectShortName">penalty_counting_debug</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="Aquila_SoC/RISCV_CORE0/BPU_Profiler/bht_hit_rate_denominator_debug">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">Aquila_SoC/RISCV_CORE0/BPU_Profiler/bht_hit_rate_denominator_debug[63:0]</obj_property>
+      <obj_property name="ObjectShortName">bht_hit_rate_denominator_debug[63:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="Aquila_SoC/RISCV_CORE0/BPU_Profiler/bht_hit_rate_numerator_debug">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">Aquila_SoC/RISCV_CORE0/BPU_Profiler/bht_hit_rate_numerator_debug[63:0]</obj_property>
+      <obj_property name="ObjectShortName">bht_hit_rate_numerator_debug[63:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="Aquila_SoC/RISCV_CORE0/BPU_Profiler/bht_hits_debug">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">Aquila_SoC/RISCV_CORE0/BPU_Profiler/bht_hits_debug[63:0]</obj_property>
+      <obj_property name="ObjectShortName">bht_hits_debug[63:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="Aquila_SoC/RISCV_CORE0/BPU_Profiler/bht_misses_debug">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">Aquila_SoC/RISCV_CORE0/BPU_Profiler/bht_misses_debug[63:0]</obj_property>
+      <obj_property name="ObjectShortName">bht_misses_debug[63:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="Aquila_SoC/RISCV_CORE0/BPU_Profiler/correct_predictions_debug">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">Aquila_SoC/RISCV_CORE0/BPU_Profiler/correct_predictions_debug[63:0]</obj_property>
+      <obj_property name="ObjectShortName">correct_predictions_debug[63:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="Aquila_SoC/RISCV_CORE0/BPU_Profiler/incorrect_predictions_debug">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">Aquila_SoC/RISCV_CORE0/BPU_Profiler/incorrect_predictions_debug[63:0]</obj_property>
+      <obj_property name="ObjectShortName">incorrect_predictions_debug[63:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="Aquila_SoC/RISCV_CORE0/BPU_Profiler/mispred_penalty_debug">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">Aquila_SoC/RISCV_CORE0/BPU_Profiler/mispred_penalty_debug[63:0]</obj_property>
+      <obj_property name="ObjectShortName">mispred_penalty_debug[63:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="Aquila_SoC/RISCV_CORE0/BPU_Profiler/prediction_accuracy_denominator_debug">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">Aquila_SoC/RISCV_CORE0/BPU_Profiler/prediction_accuracy_denominator_debug[63:0]</obj_property>
+      <obj_property name="ObjectShortName">prediction_accuracy_denominator_debug[63:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="Aquila_SoC/RISCV_CORE0/BPU_Profiler/prediction_accuracy_numerator_debug">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">Aquila_SoC/RISCV_CORE0/BPU_Profiler/prediction_accuracy_numerator_debug[63:0]</obj_property>
+      <obj_property name="ObjectShortName">prediction_accuracy_numerator_debug[63:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="Aquila_SoC/RISCV_CORE0/BPU_Profiler/total_branches_debug">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">Aquila_SoC/RISCV_CORE0/BPU_Profiler/total_branches_debug[63:0]</obj_property>
+      <obj_property name="ObjectShortName">total_branches_debug[63:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="Aquila_SoC/RISCV_CORE0/BPU_Profiler/cpi_denominator_debug">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">Aquila_SoC/RISCV_CORE0/BPU_Profiler/cpi_denominator_debug[63:0]</obj_property>
+      <obj_property name="ObjectShortName">cpi_denominator_debug[63:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="Aquila_SoC/RISCV_CORE0/BPU_Profiler/cpi_numerator_debug">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">Aquila_SoC/RISCV_CORE0/BPU_Profiler/cpi_numerator_debug[63:0]</obj_property>
+      <obj_property name="ObjectShortName">cpi_numerator_debug[63:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="Aquila_SoC/RISCV_CORE0/BPU_Profiler/execution_cycles_debug">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">Aquila_SoC/RISCV_CORE0/BPU_Profiler/execution_cycles_debug[63:0]</obj_property>
+      <obj_property name="ObjectShortName">execution_cycles_debug[63:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="Aquila_SoC/RISCV_CORE0/BPU_Profiler/fetch_pc_debug">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">Aquila_SoC/RISCV_CORE0/BPU_Profiler/fetch_pc_debug[31:0]</obj_property>
+      <obj_property name="ObjectShortName">fetch_pc_debug[31:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="Aquila_SoC/RISCV_CORE0/BPU_Profiler/instruction_completed_debug">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">Aquila_SoC/RISCV_CORE0/BPU_Profiler/instruction_completed_debug[63:0]</obj_property>
+      <obj_property name="ObjectShortName">instruction_completed_debug[63:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="Aquila_SoC/RISCV_CORE0/BPU_Profiler/penalty_counting_debug">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">Aquila_SoC/RISCV_CORE0/BPU_Profiler/penalty_counting_debug</obj_property>
+      <obj_property name="ObjectShortName">penalty_counting_debug</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+   </wvobject>
+</wave_config>

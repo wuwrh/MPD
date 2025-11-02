@@ -1,0 +1,39 @@
+# ======================================================================
+#  This Makefile builds the CoreMark ELF file for Aquila.  (Linux/PC)
+#  Chun-Jen Tsai, Jan/12/2020  |  Updated: add linker MAP generation
+# ======================================================================
+
+CC = gcc
+
+# ---- 開關參數（可在命令列覆寫） ----
+ITERATIONS ?= 0        # PC/分析建議 0；想快一點可改 5
+USE_PIE    ?= 0        # 0: 關閉 PIE（位址固定、讀 .map/objdump 輕鬆）
+
+# ---- 編譯/連結旗標 ----
+CCFLAGS = -O2 -pg -fno-inline-small-functions
+LCFLAGS = -Wall -I.
+XCFLAGS = -DITERATIONS=$(ITERATIONS)
+
+# 讓 CoreMark 列印實際旗標
+FLAGS_STR = "$(CCFLAGS) $(XCFLAGS)"
+CFLAGS = $(CCFLAGS) $(LCFLAGS) $(XCFLAGS) -DFLAGS_STR=\"$(FLAGS_STR)\"
+
+# 連結輸出 .map；預設也關掉 PIE（若 USE_PIE=1 則不關）
+LDFLAGS = -Wl,-Map=coremark.map
+ifeq ($(USE_PIE),0)
+CCFLAGS += -fno-pie -g
+LDFLAGS += -no-pie
+endif
+
+# 把 -lm 放到連結階段較乾淨
+LDLIBS = -lm
+
+PROJ = coremark
+OBJS = core_main.o core_portme.o core_util.o core_list_join.o core_matrix.o core_state.o
+
+# ---- Targets ----
+coremark: $(OBJS)
+	$(CC) -o $@ $(CFLAGS) $(OBJS) $(LDLIBS) $(LDFLAGS)
+
+clean:
+	rm -f coremark coremark.map *.o gmon.out

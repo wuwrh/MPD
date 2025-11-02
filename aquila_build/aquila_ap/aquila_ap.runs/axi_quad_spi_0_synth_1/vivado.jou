@@ -1,0 +1,24 @@
+#-----------------------------------------------------------
+# Vivado v2024.1 (64-bit)
+# SW Build 5076996 on Wed May 22 18:36:09 MDT 2024
+# IP Build 5075265 on Wed May 22 21:45:21 MDT 2024
+# SharedData Build 5076995 on Wed May 22 18:29:18 MDT 2024
+# Start of session at: Tue Oct 21 18:46:01 2025
+# Process ID: 37985
+# Current directory: /home/johnny/MPD/aquila_build/aquila_ap/aquila_ap.runs/axi_quad_spi_0_synth_1
+# Command line: vivado -log axi_quad_spi_0.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source axi_quad_spi_0.tcl
+# Log file: /home/johnny/MPD/aquila_build/aquila_ap/aquila_ap.runs/axi_quad_spi_0_synth_1/axi_quad_spi_0.vds
+# Journal file: /home/johnny/MPD/aquila_build/aquila_ap/aquila_ap.runs/axi_quad_spi_0_synth_1/vivado.jou
+# Running On        :johnny-VMware-Virtual-Platform
+# Platform          :Ubuntu
+# Operating System  :Ubuntu 24.04.3 LTS
+# Processor Detail  :Intel(R) Core(TM) i5-1038NG7 CPU @ 2.00GHz
+# CPU Frequency     :1996.800 MHz
+# CPU Physical cores:4
+# CPU Logical cores :4
+# Host memory       :10378 MB
+# Swap memory       :8589 MB
+# Total Virtual     :18968 MB
+# Available Virtual :14312 MB
+#-----------------------------------------------------------
+source axi_quad_spi_0.tcl -notrace
